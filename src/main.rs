@@ -4,17 +4,17 @@ use std::str;
 //program
 fn main() {
     loop {
-    //introduces the user to their options for unit_type
+        //introduces the user to their options for unit_type
         println!("Select the unit you would like to convert from:", );
         println!("Type 1 for Fahrenheit, 2 for Celsius, or 3 for Kelvin", );
-    //allows user input
+        //allows user input
         let mut unit = String::new();
-    //reads user input
+        //reads user input
         io::stdin().read_line(&mut unit)
             .expect("Failed to read line");
         let unit = unit.trim();
-    //states units used
-        match &*unit {
+        //states units used
+        match unit {
             //F
             "1" => {
                 println!("You are converting from Fahrenheit", );
@@ -26,7 +26,7 @@ fn main() {
                     .expect("Failed to read line");
                 let to_unit = to_unit.trim();
                 //determines what equation to use
-                match &*to_unit {
+                match to_unit {
                     //F=>C
                     "1" => {
                         println!("You are converting to Celsius", );
@@ -73,7 +73,7 @@ fn main() {
                     .expect("Failed to read line");
                 let to_unit = to_unit.trim();
                 //determines which equation to use
-                match &*to_unit {
+                match to_unit {
                     //C=>F
                     "1" => {
                         println!("You are converting to Fahrenheit", );
@@ -120,7 +120,7 @@ fn main() {
                     .expect("Failed to read line");
                 let to_unit = to_unit.trim();
                 //determines which equation to use
-                match &*to_unit {
+                match to_unit {
                     //K=>F
                     "1" => {
                         println!("You are converting to Fahrenheit", );
@@ -160,7 +160,7 @@ fn main() {
                 println!("Invalid choice", );
             }
         }
-    //asks if another conversion is required
+        //asks if another conversion is required
         println!("
         Do you have another temperature to convert?
         y=Yes, n=No", );
@@ -168,7 +168,7 @@ fn main() {
         io::stdin().read_line(&mut ask)
             .expect("Failed to read line");
         let ask = ask.trim();
-        match &*ask {
+        match ask {
             "y" => {
                 println!("Ok then.", );
             }
